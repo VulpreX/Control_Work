@@ -1,4 +1,4 @@
-﻿void Newarray(string[] array)
+﻿string[] Newarray(string[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
@@ -6,13 +6,26 @@
     }
 
     Console.WriteLine();
+     int count=0;
     for (int i = 0; i < array.Length; i++)
     {
         if( array[i].Length <= 3 && array[i].Length!= 0 )
         {
             Console.Write($"{array[i]} ");
+            count+=1;
         }
     }
+
+    string[] newarray = new string[count];
+    count=0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if( array[i].Length <= 3 )
+        {
+            newarray[count]=array[i];
+        }
+    }
+    return newarray;
 }
 int ReadInt(string argument1)
 {
